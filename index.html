@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js" defer></script>
+    <style>
+      .disabled {
+        color: lightgray;
+        transition: color 1s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      <h2>{{ message }}</h2>
+      <p>{{ otherMessage }}</p>
+      <p>{{ newMessage }}</p>
+      <button v-on:click="changeMessage()">Click Here</button>
+      <input type="password" v-model="newMessage" placeholder="Text goes here">
+      <ol>
+        <li v-for="item in hi">{{item}}</li>
+      </ol>
+      <input type="text" v-model="newHello" placeholder="Add hello in a new language">
+      <button v-on:click="addHello()">Add hello</button>
+      <div>
+        <p v-bind:class="{disabled: showText}">What does this mean?</p>
+        <input type="checkbox" v-on:click="showText = !showText">Check here</input>
+      </div>
+    </div>
+  </body>
+</html>
